@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane style="-fx-background-color: #ede7f6;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.dbmsproject.controller.MainController">
+    <children>
+        <TableView fx:id="tableView_grocery" layoutY="313.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                   minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseAction" prefHeight="254.0"
+                   prefWidth="1066.0" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="30.0"
+                   AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="313.0">
+            <columns>
+                <TableColumn fx:id="col_id" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" sortable="false"
+                             text="Id"/>
+                <TableColumn fx:id="col_itemname" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" sortable="false"
+                             text="Item Name"/>
+                <TableColumn fx:id="col_quantity" prefWidth="126.39996337890625" sortable="false" text="Quantity"/>
+                <TableColumn fx:id="col_price" prefWidth="69.20001220703125" sortable="false" text="Price"/>
+                <TableColumn fx:id="col_date" prefWidth="70.0" sortable="false" text="Date"/>
+                <TableColumn fx:id="col_orderedby" prefWidth="91.20001220703125" sortable="false" text="Ordered By"/>
+                <TableColumn fx:id="col_category" prefWidth="208.60000228881836" sortable="false" text="Category"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <AnchorPane layoutY="-1.0" prefHeight="271.0" prefWidth="1066.0" AnchorPane.leftAnchor="30.0"
+                    AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+            <children>
+                <VBox alignment="TOP_RIGHT" layoutX="802.0" prefHeight="246.0" prefWidth="258.0" spacing="15.0"
+                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="802.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="btn_add" mnemonicParsing="false" onAction="#insertGrocery" prefHeight="30.0"
+                                prefWidth="215.0" style="-fx-background-color: #00c853;" text="Add">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/addn.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                            </padding>
+
+                            <effect>
+                                <DropShadow color="GRAY" offsetX="3.0" offsetY="3.0"/>
+                            </effect>
+                        </Button>
+                        <Button fx:id="btn_update" mnemonicParsing="false" onAction="#updateGrocery" prefHeight="30.0"
+                                prefWidth="215.0" style="-fx-background-color: #eeff41;" text="Update">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/update.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                            </padding>
+                            <effect>
+                                <DropShadow color="GRAY" offsetX="3.0" offsetY="3.0"/>
+                            </effect>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#editMembers" prefHeight="30.0" prefWidth="215.0"
+                                text="Edit Members">
+                            <padding>
+                                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                            </padding>
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GRAY" offsetX="3.0" offsetY="3.0"/>
+                            </effect>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#showStatistics" prefHeight="30.0" prefWidth="215.0"
+                                text="Statistics">
+                            <padding>
+                                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                            </padding>
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GRAY" offsetX="3.0" offsetY="3.0"/>
+                            </effect>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox prefHeight="271.0" prefWidth="154.0" spacing="15.0">
+                    <children>
+                        <Label lineSpacing="5.0" prefHeight="30.0" prefWidth="102.0" text="Item name">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="30.0" prefWidth="90.0" text="Quantity">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="30.0" prefWidth="80.0" text="Price">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets top="2.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <Label prefHeight="30.0" prefWidth="94.0" text="Date">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets top="2.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                               prefHeight="30.0" text="Family Member">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets top="2.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <Label prefHeight="30.0" text="Category">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                </VBox>
+                <VBox layoutX="160.0" prefHeight="271.0" prefWidth="483.0" spacing="15.0">
+                    <children>
+                        <TextField fx:id="tf_item_name" prefHeight="30.0">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="tf_quantity" prefHeight="30.0">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="tf_price" prefHeight="30.0">
+                            <font>
+                                <Font name="Calibri" size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                        </TextField>
+                        <DatePicker fx:id="dp_date" editable="false" prefHeight="30.0" prefWidth="225.0">
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                        </DatePicker>
+                        <HBox prefHeight="30.0" prefWidth="483.0">
+                            <children>
+                                <ComboBox fx:id="cb_family_member" prefHeight="30.0" prefWidth="225.0"
+                                          promptText="Family member" visibleRowCount="5"/>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" onMouseClicked="#setMembersInComboBox"
+                                           pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                        <Insets left="10.0" top="8.0"/>
+                                    </HBox.margin>
+                                    <image>
+                                        <Image url="@../icons/refresh.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                        <ComboBox fx:id="cb_category" prefHeight="30.0" prefWidth="225.0" promptText="Choose category"/>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <Button fx:id="btn_delete" layoutX="964.0" layoutY="584.0" mnemonicParsing="false" onAction="#deleteGrocery"
+                prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: #ff5252;" text="Delete"
+                textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <font>
+                <Font name="Calibri Bold" size="18.0"/>
+            </font>
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../icons/deleten.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <effect>
+                <DropShadow color="GRAY" offsetX="3.0" offsetY="3.0"/>
+            </effect>
+        </Button>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1bee7;"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.dbmsproject.controller.CreateAccount">
+    <children>
+        <VBox alignment="CENTER" layoutX="550.0" layoutY="139.0" prefHeight="450.0" prefWidth="974.0"
+              style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="400.0"
+              AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="150.0">
+            <children>
+                <Label text="Create Account">
+                    <font>
+                        <Font name="Calibri Bold" size="48.0"/>
+                    </font>
+                </Label>
+                <Label text="Fill in the details and continue">
+                    <font>
+                        <Font name="Calibri" size="18.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="tf_username_ca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                           minWidth="-Infinity" prefHeight="45.0" prefWidth="270.0" promptText="Username">
+                    <VBox.margin>
+                        <Insets top="40.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font name="Calibri" size="18.0"/>
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_mobile_no_ca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                           minWidth="-Infinity" prefHeight="45.0" prefWidth="270.0" promptText="Mobile No.">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font name="Calibri" size="18.0"/>
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_password_ca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                           minWidth="-Infinity" prefHeight="45.0" prefWidth="270.0" promptText="Password">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font name="Calibri" size="18.0"/>
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_confirm_password_ca" maxHeight="-Infinity" maxWidth="-Infinity"
+                           minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="270.0"
+                           promptText="Confirm Password">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font name="Calibri" size="18.0"/>
+                    </font>
+                </TextField>
+                <Button mnemonicParsing="false" onAction="#createAccountBtn" prefHeight="45.0" prefWidth="270.0"
+                        style="-fx-background-color: #81d4fa;" text="Create Account">
+                    <font>
+                        <Font name="Calibri Bold" size="18.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets top="25.0"/>
+                    </VBox.margin>
+                    <effect>
+                        <DropShadow color="GRAY" offsetX="3.0" offsetY="3.0"/>
+                    </effect>
+                </Button>
+                <Label fx:id="label_show_error" alignment="CENTER" layoutX="500.0" layoutY="65.0" maxHeight="-Infinity"
+                       maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="270.0"
+                       textAlignment="CENTER" textFill="RED">
+                    <font>
+                        <Font name="Calibri" size="18.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                </Label>
+            </children>
+            <effect>
+                <DropShadow blurType="GAUSSIAN" height="54.37" offsetX="3.0" offsetY="3.0" radius="23.705" spread="0.09"
+                            width="42.45">
+                    <color>
+                        <Color red="0.49803921580314636" green="0.4901960790157318" blue="0.4901960790157318"
+                               opacity="0.6600000262260437"/>
+                    </color>
+                </DropShadow>
+            </effect>
+        </VBox>
+    </children>
+</AnchorPane>

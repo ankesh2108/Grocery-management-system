@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml" fx:controller="com.dbmsproject.controller.Statistics">
+    <children>
+        <Label layoutX="447.0" layoutY="14.0" text="Statistics">
+            <font>
+                <Font name="Calibri Bold" size="36.0"/>
+            </font>
+        </Label>
+        <HBox layoutX="414.0" layoutY="81.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="340.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+            <children>
+                <PieChart fx:id="member_wise_pie_chart" prefHeight="395.0" prefWidth="513.0"/>
+                <PieChart fx:id="category_wise_pie_chart" prefHeight="395.0" prefWidth="513.0"/>
+            </children>
+        </HBox>
+        <VBox layoutX="450.0" layoutY="600.0" prefHeight="274.0" prefWidth="940.0" AnchorPane.bottomAnchor="20.0"
+              AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Total amount spent - ">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="total_amt_spent" editable="false" prefHeight="30.0" prefWidth="150.0">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets left="8.0"/>
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Total no. of items ordered by ">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="mem_combobox" editable="true" onAction="#calcValueForMember"
+                                  prefWidth="150.0"/>
+                        <Label text=" - ">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="tf_items_by_members" editable="false" maxHeight="-Infinity"
+                                   maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
+                                   prefWidth="150.0">
+                            <HBox.margin>
+                                <Insets left="8.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Total no of items in ">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="category_combobox" editable="true" onAction="#calcValueForCategory"
+                                  prefWidth="150.0"/>
+                        <Label text=" category - ">
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="tf_no_in_category" editable="false" maxHeight="-Infinity" maxWidth="-Infinity"
+                                   minHeight="-Infinity" minWidth="-Infinity" onAction="#calcValueForCategory"
+                                   prefHeight="30.0" prefWidth="150.0">
+                            <HBox.margin>
+                                <Insets left="8.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font name="Calibri Bold" size="18.0"/>
+                            </font>
+                        </TextField>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
